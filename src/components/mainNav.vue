@@ -1,5 +1,16 @@
 <script setup>
     import logo from '@/assets/svg/logo.svg';
+    import Input from '@/components/Input.vue';
+    import wButton from '@/components/wButton.vue';
+      window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.mainNav');
+        if (window.scrollY > 20) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
 </script>
 <template>
     <nav class="mainNav">
@@ -23,6 +34,8 @@
                     <a href="#" class="navItem">
                         Resources
                     </a>
+                    <Input />
+                    <wButton>Visit Webcake</wButton>
                 </div>
             </div>
         </div>
@@ -30,8 +43,17 @@
 </template>
 
 <style scoped lang="scss">
+.mainNav {
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+}
+.mainNav.scrolled {
+    background-color: var(--color-bg-white);
+}
 .navList {
     gap: 16px;
+    justify-content: center;
+    align-items: center;
 }
 .navItem {
     padding: 8px 16px;
@@ -39,5 +61,11 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--color-content-neutral-medium);
 }
 </style>

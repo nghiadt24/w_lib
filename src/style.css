@@ -2,5 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-smooth: initial;
+    font-family: "Roboto", sans-serif;
+}
 #app {
+
 }
